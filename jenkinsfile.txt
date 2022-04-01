@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    
+    environment {
+        PROJECT_NAME = "Test_One"
+        OWNER_NAME = "Bess"
+    }
+
+    stages {
+        stage('Build-1') { 
+            steps {
+                echo 'build -1'
+                echo 'build -2 '
+                echo 'build -3'
+                echo "Hello ${OWNER_NAME}"
+                echo "Project name is ${PROJECT_NAME}"
+            }
+        }
+        stage('test-1') {
+            steps {
+                echo 'test -1'
+                echo 'test -2 '
+                echo 'test -3'
+            }
+        }
+    
+        stage('deploy-1') {
+            steps {
+                echo 'deploy -1'
+                echo 'deploy -2 '
+                echo 'deploy -3'
+            }
+        }
+        stage('finish-1') {
+            steps {
+                echo 'finish -1'
+                echo 'finish -2 '
+                echo 'finish -3'
+                echo "Good Job Bro!!!!!"
+            }
+        }
+    }
+}
